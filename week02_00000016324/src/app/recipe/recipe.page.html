@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recipe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let recipe of arr_recipe let i=index" [routerLink]="['./', recipe.id]">
+      <ion-avatar slot="start">
+        <ion-img [src]="recipe.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label>{{ recipe.title }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-grid text-center *ngIf="arr_recipe.length < 1"> <ion-text>No Data Available.</ion-text></ion-grid>
+</ion-content>
